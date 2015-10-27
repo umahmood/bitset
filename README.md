@@ -7,9 +7,9 @@ need a bunch of bits to manipulate.
 
 > go get github.com/umahmood/bitset
 
-After installation you will want to run:
-
-> go test github.com/umahmood/bitset
+> cd $GOPATH/src/github.com/umahmood/bitset
+    
+> go test ./...
 
 # Documentation
 
