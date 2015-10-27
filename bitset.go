@@ -5,6 +5,7 @@ import "strings"
 const bitsPerWord uint64 = 6
 const numOfBits uint64 = 64
 
+// Bitset represents a fixed size sequence of N bits.
 type Bitset struct {
 	set       []uint64
 	size      uint64
@@ -90,7 +91,7 @@ func (b *Bitset) Flip(p uint64) {
 
 // All tests if all the bits in the bitset are set to true.
 func (b *Bitset) All() bool {
-	var i uint64 = 0
+	var i uint64
 	for ; i < b.size; i++ {
 		if !b.Test(i) {
 			return false
@@ -101,7 +102,7 @@ func (b *Bitset) All() bool {
 
 // Any tests if any of the bits in the bitset are set to true.
 func (b *Bitset) Any() bool {
-	var i uint64 = 0
+	var i uint64
 	for ; i < b.size; i++ {
 		if b.Test(i) {
 			return true
@@ -112,7 +113,7 @@ func (b *Bitset) Any() bool {
 
 // None tests if none of the bits in the bitset are set to true.
 func (b *Bitset) None() bool {
-	var i uint64 = 0
+	var i uint64
 	for ; i < b.size; i++ {
 		if b.Test(i) {
 			return false

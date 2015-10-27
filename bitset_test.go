@@ -71,7 +71,7 @@ func TestCheckBoundsThrowsPanic(t *testing.T) {
 }
 
 func TestCheckBoundsDoesNotThrowPanic(t *testing.T) {
-	var want error = nil
+	var want error
 	b := New(100)
 	defer func() {
 		if got := recover(); got != want {
@@ -200,7 +200,7 @@ func TestAllNoBitsSet(t *testing.T) {
 func TestAllBitsSet(t *testing.T) {
 	want := true
 	b := New(100)
-	var i uint64 = 0
+	var i uint64
 	for ; i < b.Size(); i++ {
 		b.Set(i)
 	}
